@@ -1,0 +1,26 @@
+{
+	"name": "ArrièreplanRépété2",
+	"plugin-id": "TiledBg",
+	"sid": 766105009436944,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solide",
+			"sid": 605632570624042
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 250,
+		"height": 250,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 3109292,
+		"useCollisionPoly": true
+	}
+}

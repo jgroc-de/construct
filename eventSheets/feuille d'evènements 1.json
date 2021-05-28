@@ -1,0 +1,188 @@
+{
+	"name": "Feuille d'Evènements 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 531224966407898
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-enabled",
+					"objectClass": "ball",
+					"sid": 529380558615901,
+					"behaviorType": "Projectile"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-bounce-off-solids",
+					"objectClass": "ball",
+					"sid": 410782980169334,
+					"behaviorType": "Projectile",
+					"parameters": {
+						"state": true
+					}
+				}
+			],
+			"sid": 629624695255068
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Clavier",
+					"sid": 113066149292535,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "ArrièreplanRépété",
+					"sid": 114463345309791,
+					"parameters": {
+						"x": "ArrièreplanRépété.X+10"
+					}
+				}
+			],
+			"sid": 976459055876065
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Clavier",
+					"sid": 553810008684366,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "ArrièreplanRépété",
+					"sid": 132337445286929,
+					"parameters": {
+						"x": "ArrièreplanRépété.X - 10"
+					}
+				}
+			],
+			"sid": 329206674231558
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 100082652887473
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "ball",
+					"sid": 365762484365451,
+					"behaviorType": "Projectile",
+					"parameters": {
+						"speed": "400+score*100"
+					}
+				}
+			],
+			"sid": 886297655360464
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "ball",
+					"sid": 709326601963440,
+					"parameters": {
+						"object": "Sprite"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 444478964627674,
+					"parameters": {
+						"variable": "score",
+						"value": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Sprite",
+					"sid": 125672771237460
+				}
+			],
+			"sid": 591094780423922
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 312961272345858,
+					"parameters": {
+						"interval-seconds": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 961481001753297,
+					"parameters": {
+						"object-to-create": "Sprite",
+						"layer": "0",
+						"x": "random(0,1200)",
+						"y": "random(0,800)",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 122156945443423
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 138961883710137
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle",
+					"objectClass": "ball",
+					"sid": 989542874350143,
+					"parameters": {
+						"angle": "random(0,360)"
+					}
+				}
+			],
+			"sid": 116895704393309
+		}
+	],
+	"sid": 308399303400923
+}
